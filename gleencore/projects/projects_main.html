@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Проекты - СК Глинкор</title>
+<link rel="stylesheet" href="/Users/moverzd/Projects/Polytech/polyweb/gleencore/projects/projects_styles.css">
+<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,600,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<section class="header">
+    <nav>
+        <a href="index.html" class="top-logo">Строительная компания Глинкор</a>
+        <div class="nav-links" id="navLinks">
+            <i class="fa fa-close" onclick="hideMenu()"></i>
+            <ul>
+                <li><a href="about.html">Специализация</a></li>
+                <li><a href="course.html">Проекты</a></li>
+                <li><a href="blog.html">Клиенты</a></li>
+                <li><a href="contact.html">Контактная информация</a></li>
+            </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+</section>
+<div class="text-box">
+    <h1>Наши проекты</h1>
+</div>
+
+<h1 class="years">2020 год</h1>
+<section class="newprojects">
+    <ul>
+        <li>
+            <a href="#" class="modal-trigger" data-modal-content="<div class='modal-images'>
+                <img src='/Users/moverzd/Projects/Polytech/polyweb/gleencore/images/catphoto.jpg' alt='Проект один'>
+                <img src='/Users/moverzd/Projects/Polytech/polyweb/gleencore/images/catphoto.jpg' alt='Проект один'>
+            </div><div class='modal-text'><h2>Проект один</h2><p>Описание проекта один.</p></div>">
+                <figure>
+                    <img src="/Users/moverzd/Projects/Polytech/polyweb/gleencore/images/catphoto.jpg" alt="Проект один">
+                    <figcaption>Проект один</figcaption>
+                </figure>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="modal-trigger" data-modal-content="<div class='modal-images'>
+                <img src='/Users/moverzd/Projects/Polytech/polyweb/gleencore/images/catphoto.jpg' alt='Проект два'>
+                <img src='/Users/moverzd/Projects/Polytech/polyweb/gleencore/images/catphoto.jpg' alt='Проект два'>
+            </div><div class='modal-text'><h2>Проект два</h2><p>Описание проекта два.</p></div>">
+                <figure>
+                    <img src="/Users/moverzd/Projects/Polytech/polyweb/gleencore/images/catphoto.jpg" alt="Проект два">
+                    <figcaption>Проект два</figcaption>
+                </figure>
+            </a>
+        </li>
+        <!-- Добавьте другие элементы по аналогии -->
+    </ul>
+</section>
+
+<!-- Модальное окно -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="modal-text"></div>
+    </div>
+</div>
+
+<script>
+// Получаем модальное окно
+var modal = document.getElementById("modal");
+
+// Получаем элемент для текста внутри модального окна
+var modalText = document.getElementById("modal-text");
+
+// Получаем элемент <span>, который закрывает модальное окно
+var span = document.getElementsByClassName("close")[0];
+
+// Получаем все триггеры для открытия модального окна
+var triggers = document.querySelectorAll(".modal-trigger");
+
+// Добавляем обработчик события для каждого триггера
+triggers.forEach(function(trigger) {
+    trigger.onclick = function(event) {
+        event.preventDefault();
+        var content = this.getAttribute("data-modal-content");
+        modalText.innerHTML = content;
+        modal.style.display = "block";
+    };
+});
+
+// Когда пользователь нажимает на <span> (x), закрывается модальное окно
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// Когда пользователь нажимает в любом месте за пределами модального окна, оно закрывается
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+</body>
+</html>

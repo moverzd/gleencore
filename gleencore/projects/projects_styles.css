@@ -1,0 +1,302 @@
+:root {
+    --spacing-between-elements: 0px; /* Настраиваемое расстояние */
+}
+
+html {
+    scroll-behavior: smooth; /*TO CHECK*/
+}
+
+/*To all objects*/
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #EBEBEB;
+}
+
+.header {
+    min-height: 40vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background-image: url("images/pawel-czerwinski-O5uri6kQHQQ-uns.png");
+    background-size: cover;
+}
+
+.years {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: var(--spacing-between-elements);
+}
+
+/*Navigation bar*/
+nav {
+    display: flex;
+    padding: 2% 4%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links ul {
+    list-style: none;
+}
+
+.nav-links ul li {
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+
+.nav-links ul li a {
+    color: #212427;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.nav-links ul li::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    background: #3C096C;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.nav-links ul li:hover::after {
+    width: 100%;
+}
+
+nav .fa {
+    display: none;
+}
+
+/*Top left side logo*/
+a.top-logo {
+    text-decoration: none;
+    color: #212427;
+    font-size: 20px;
+}
+
+/*Text box on main page*/
+.text-box {
+    width: 90%;
+    color: #212427;
+    position: absolute;
+    top: 30%; /* Позиционирование блока выше */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    margin-bottom: var(--spacing-between-elements); /* Использование переменной для нижнего отступа */
+}
+
+.text-box h1 {
+    font-size: 62px;
+}
+
+.text-box p {
+    margin: 20px 0 40px;
+    font-size: 20px;
+    color: #212427;
+}
+
+p {
+    color: #212427;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+}
+
+.text-box h1 {
+    font-size: 45px;
+}
+
+.newprojects {
+    margin: 0;
+    padding: 1rem;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.newprojects img {
+    width: 100%;
+    display: block;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    transition: transform 1000ms;
+    border-radius: 10px;
+}
+
+.newprojects ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    max-width: 100%;
+    width: 70rem;
+    border-radius: 10px;
+}
+
+.newprojects figure {
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.newprojects figure::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(0, 0, 0, 0.5);
+    transform-origin: center;
+    opacity: 0;
+    transform: scale(2);
+    transition: opacity 100ms;
+    border-radius: 10px;
+}
+
+.newprojects figcaption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    color: white;
+    font-size: 1.2rem;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 600ms, transform 600ms;
+    border-radius: 10px;
+}
+
+.newprojects a:is(:hover, :focus) figure::after {
+    opacity: 1;
+    border-radius: 10px;
+}
+
+.newprojects a:is(:hover, :focus) figcaption {
+    opacity: 1;
+    border-radius: 10px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .newprojects figcaption {
+        transform: translate3d(0, 2rem, 0);
+    }
+
+    .newprojects figure::after {
+        border-radius: 50%;
+        opacity: 1;
+        transform: scale(0);
+        transition: transform 900ms;
+    }
+
+    .newprojects a:is(:hover, :focus) figure::after {
+        transform: scale(2.5);
+    }
+
+    .newprojects a:is(:hover, :focus) figcaption {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+        transition: opacity 600ms 400ms, transform 600ms 400ms;
+    }
+
+    .newprojects a:is(:hover, :focus) img {
+        transform: scale(1.2);
+    }
+}
+
+/* Стиль для галереи */
+.gallery img {
+    width: 200px;
+    cursor: pointer;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 1200px;
+    text-align: left;
+    border-radius: 10px;
+    display: grid;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between; /* Изменено */
+}
+
+.modal-images {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-right: 20px;
+    width: 60%; /* Добавьте это для задания ширины изображения */
+    
+}
+
+.modal-images img {
+    width: 100%; /* Измените это на фиксированные размеры при необходимости */
+    height: auto;
+    border-radius: 15px;
+    align-items: left;
+}
+
+.modal-text {
+    max-width: 100%;
+    color:black;
+    text-align-last:right;
+}
+.modal-text p{
+    color:black;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
