@@ -1,13 +1,9 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const menuIcon = document.getElementById('menu-icon');
-    const navList = document.getElementById('navlist');
+var navLinks = document.getElementById("navLinks");
 
-    menuIcon.addEventListener('click', function () {
-        if (navList.style.display === 'flex' || navList.style.display === 'block') {
-            navList.style.display = 'none';
-        } else {
-            navList.style.display = 'flex';
-            navList.style.flexDirection = 'column';
-        }
-    });
-});
+function showMenu() {
+    navLinks.style.right = "0";
+}
+
+function hideMenu() {
+    navLinks.style.right = "-200px";
+}

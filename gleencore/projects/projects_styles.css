@@ -1,12 +1,3 @@
-:root {
-    --spacing-between-elements: 0px; /* Настраиваемое расстояние */
-}
-
-html {
-    scroll-behavior: smooth; /*TO CHECK*/
-}
-
-/*To all objects*/
 * {
     margin: 0;
     padding: 0;
@@ -25,16 +16,21 @@ body {
     overflow: hidden;
     background-image: url("images/pawel-czerwinski-O5uri6kQHQQ-uns.png");
     background-size: cover;
+    margin: 0;
 }
 
-.years {
-    display: flex;
-    justify-content: center;
+/* Years sections */
+.objects {
     text-align: center;
-    margin-top: var(--spacing-between-elements);
+    margin: 20px 0; /* Увеличьте, если нужно больше пространства */
 }
 
-/*Navigation bar*/
+.objects h1 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Navigation bar */
 nav {
     display: flex;
     padding: 2% 4%;
@@ -58,7 +54,7 @@ nav {
 }
 
 .nav-links ul li a {
-    color: #212427;
+    color: #0b1215;
     text-decoration: none;
     font-size: 15px;
 }
@@ -81,23 +77,61 @@ nav .fa {
     display: none;
 }
 
-/*Top left side logo*/
+@media (max-width: 700px) {
+    .nav-links ul li {
+        display: block;
+    }
+
+    .nav-links {
+        position: fixed;
+        background: #3C096C;
+        height: 100vh;
+        width: 100%;
+        top: 0;
+        right: -100%;
+        text-align: left;
+        z-index: 2;
+        transition: 0.5s;
+        opacity: 0.9;
+    }
+
+    .nav-links ul {
+        padding: 30px;
+    }
+
+    nav .fa {
+        display: block;
+        color: #fff;
+        margin: 10px;
+        font-size: 22px;
+        cursor: pointer;
+        color: #0b1215;
+    }
+    .nav-links .fa-close {
+        color: #fff;
+    }
+
+    .text-box h1 {
+        font-size: 20px;
+    }
+}
+
+/* Top left side logo */
 a.top-logo {
     text-decoration: none;
-    color: #212427;
+    color: #0b1215;
     font-size: 20px;
 }
 
-/*Text box on main page*/
+/* Text box on main page */
 .text-box {
     width: 90%;
     color: #212427;
     position: absolute;
-    top: 30%; /* Позиционирование блока выше */
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    margin-bottom: var(--spacing-between-elements); /* Использование переменной для нижнего отступа */
 }
 
 .text-box h1 {
@@ -107,11 +141,11 @@ a.top-logo {
 .text-box p {
     margin: 20px 0 40px;
     font-size: 20px;
-    color: #212427;
+    color: #0b1215;
 }
 
 p {
-    color: #212427;
+    color: #0b1215;
     font-size: 14px;
     font-weight: 300;
     line-height: 22px;
@@ -121,10 +155,18 @@ p {
     font-size: 45px;
 }
 
+/* Projects table */
+
+.project-section {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .newprojects {
-    margin: 0;
-    padding: 1rem;
-    min-height: 100vh;
+    margin-top: 10px;
+    padding: 0.1rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -144,11 +186,15 @@ p {
     margin: 0;
     padding: 0;
     display: grid;
-    gap: 0.5rem;
+    gap: 0.25rem;
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     max-width: 100%;
     width: 70rem;
     border-radius: 10px;
+}
+
+.newprojects li {
+    margin-bottom: 0.5rem;
 }
 
 .newprojects figure {
@@ -229,7 +275,7 @@ p {
     }
 }
 
-/* Стиль для галереи */
+/* Style for gallery */
 .gallery img {
     width: 200px;
     cursor: pointer;
@@ -254,37 +300,64 @@ p {
     border: 1px solid #888;
     width: 90%;
     max-width: 1200px;
-    text-align: left;
     border-radius: 10px;
-    display: grid;
+    display: flex;
     flex-direction: row;
     align-items: flex-start;
-    justify-content: space-between; /* Изменено */
+    justify-content: flex-start;
+}
+
+.modal-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
 }
 
 .modal-images {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-right: 20px;
-    width: 60%; /* Добавьте это для задания ширины изображения */
-    
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 50%;
 }
 
 .modal-images img {
-    width: 100%; /* Измените это на фиксированные размеры при необходимости */
-    height: auto;
-    border-radius: 15px;
-    align-items: left;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 10px;
 }
 
 .modal-text {
-    max-width: 100%;
-    color:black;
-    text-align-last:right;
+    padding: 20px;
+    max-width: 50%;
 }
-.modal-text p{
-    color:black;
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 8px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
 }
 
 .close {
@@ -298,5 +371,26 @@ p {
 .close:focus {
     color: black;
     text-decoration: none;
-    cursor: pointer;
+    cursor:pointer;
+}
+
+@media (max-width: 700px) {
+    .modal-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .modal-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .modal-images {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .modal-text {
+        max-width: 100%;
+    }
 }
