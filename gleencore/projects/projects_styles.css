@@ -1,3 +1,5 @@
+/*To all objects*/
+
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +9,10 @@
 
 body {
     background-color: #EBEBEB;
+    overflow-x: hidden; 
 }
+
+/* Styles for header */
 
 .header {
     min-height: 40vh;
@@ -19,18 +24,15 @@ body {
     margin: 0;
 }
 
-/* Years sections */
+/* Styles for sections */
+
 .objects {
     text-align: center;
-    margin: 20px 0; /* Увеличьте, если нужно больше пространства */
+    margin: 20px 0;
 }
 
-.objects h1 {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
+/* Navigation Styling */
 
-/* Navigation bar */
 nav {
     display: flex;
     padding: 2% 4%;
@@ -77,6 +79,8 @@ nav .fa {
     display: none;
 }
 
+/* Мobile style for navigation */
+
 @media (max-width: 700px) {
     .nav-links ul li {
         display: block;
@@ -107,6 +111,7 @@ nav .fa {
         cursor: pointer;
         color: #0b1215;
     }
+
     .nav-links .fa-close {
         color: #fff;
     }
@@ -114,16 +119,22 @@ nav .fa {
     .text-box h1 {
         font-size: 20px;
     }
+    .nav-links ul li a {
+        color: #fff; 
+    }
 }
 
-/* Top left side logo */
+/*Top left side logo*/
+
 a.top-logo {
     text-decoration: none;
     color: #0b1215;
     font-size: 20px;
+
 }
 
-/* Text box on main page */
+/* Text on main page*/
+
 .text-box {
     width: 90%;
     color: #212427;
@@ -151,12 +162,7 @@ p {
     line-height: 22px;
 }
 
-.text-box h1 {
-    font-size: 45px;
-}
-
-/* Projects table */
-
+/* Project section */
 .project-section {
     margin-top: 20px;
     display: flex;
@@ -170,6 +176,7 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .newprojects img {
@@ -184,17 +191,18 @@ p {
 .newprojects ul {
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 0 4rem; 
     display: grid;
     gap: 0.25rem;
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     max-width: 100%;
-    width: 70rem;
+    width: calc(100% - 4rem);
     border-radius: 10px;
 }
 
 .newprojects li {
     margin-bottom: 0.5rem;
+    width: 100%;
 }
 
 .newprojects figure {
@@ -248,6 +256,8 @@ p {
     border-radius: 10px;
 }
 
+/*Mobile style for projects*/
+
 @media (prefers-reduced-motion: no-preference) {
     .newprojects figcaption {
         transform: translate3d(0, 2rem, 0);
@@ -275,11 +285,14 @@ p {
     }
 }
 
-/* Style for gallery */
+/* Gallery */
+
 .gallery img {
     width: 200px;
     cursor: pointer;
 }
+
+/* Modal Window */
 
 .modal {
     display: none;
@@ -294,6 +307,7 @@ p {
 }
 
 .modal-content {
+    position: relative; 
     background-color: #fefefe;
     margin: 5% auto;
     padding: 20px;
@@ -302,8 +316,8 @@ p {
     max-width: 1200px;
     border-radius: 10px;
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
+    flex-direction: column; 
+    align-items: center;
     justify-content: flex-start;
 }
 
@@ -311,6 +325,7 @@ p {
     display: flex;
     flex-direction: row;
     width: 100%;
+    position: relative;
 }
 
 .modal-images {
@@ -328,56 +343,74 @@ p {
 }
 
 .modal-text {
-    padding: 20px;
+    margin-left: 20px; 
     max-width: 50%;
+    padding: 10px 20px 20px 20px; 
 }
+
+/*Button style for sliding in modal window */
 
 .prev, .next {
     cursor: pointer;
     position: absolute;
     top: 50%;
-    width: auto;
+    width: 40px;
+    height: 40px;
     padding: 8px;
     color: white;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 22px;
     transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    z-index: 10; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .prev {
-    left: 0;
-    border-radius: 3px 0 0 3px;
+    left: 0; 
+    transform: translateY(-50%);
+    border-radius: 0 3px 3px 0;
 }
 
 .next {
-    right: 0;
+    right: 0; 
+    transform: translateY(-50%);
     border-radius: 3px 0 0 3px;
 }
 
 .prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
+/*Close button styling*/
+
 .close {
-    color: #aaa;
-    float: right;
+    color: black;
+    position: absolute; 
+    top: 10px; 
+    right: 10px; 
     font-size: 28px;
     font-weight: bold;
+    z-index: 11; 
 }
 
 .close:hover,
 .close:focus {
     color: black;
     text-decoration: none;
-    cursor:pointer;
+    cursor: pointer;
 }
+
+/* Mobile styling for modal window*/
 
 @media (max-width: 700px) {
     .modal-content {
         flex-direction: column;
         align-items: center;
+        padding-top: 40px; 
     }
 
     .modal-container {
@@ -387,10 +420,159 @@ p {
 
     .modal-images {
         width: 100%;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
+        position: relative; 
+    }
+
+    .modal-images img {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 10px;
     }
 
     .modal-text {
         max-width: 100%;
+        padding: 10px 20px 20px 20px;
+        text-align: center;
+    }
+
+    .prev, .next {
+        top: 50%;
+        width: 30px;
+        height: 30px;
+        font-size: 22px;
+        background-color: rgba(0, 0, 0, 0.5);
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10; 
+    }
+
+    .prev {
+        left: 0; 
+        transform: translateY(-50%);
+        border-radius: 0 3px 3px 0;
+    }
+
+    .next {
+        right: 0; 
+        transform: translateY(-50%);
+        border-radius: 3px 0 0 3px;
+    }
+
+    .prev:hover, .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .close {
+        top: -5px;
+        left: 95%; 
+        transform: translateX(-50%);
+    }
+
+    .newprojects ul {
+        grid-template-columns: repeat(2, 1fr); /* two collums */
+        gap: 0.5rem;
+        padding: 0 1rem; 
+        max-width: 100%;
+    }
+
+    .newprojects li {
+        margin-bottom: 0.5rem;
+        width: 100%;
     }
 }
+
+/*Table styling for Mobile*/
+
+@media (max-width: 700px) {
+    .newprojects ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Две collums */
+        gap: 0.5rem;
+        padding: 0 1rem;
+        max-width: 100%;
+    }
+
+    .newprojects li {
+        width: 100%;
+    }
+}
+
+/*Footer styling*/
+
+.footer {
+    background: #0b1215;
+    color: #fff;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 800px; 
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+}
+
+.footer-section h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-section.contact ul li {
+    display: flex;
+    align-items: center;
+}
+
+.footer-section.contact ul li i {
+    margin-right: 10px;
+}
+
+.footer-bottom {
+    background: #222;
+    color: #bbb;
+    padding: 10px 0;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+/*Footer styling for Mobile*/
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        text-align: center;
+    }
+}
+
