@@ -1,5 +1,4 @@
 /*To all objects*/
-
 * {
     margin: 0;
     padding: 0;
@@ -13,7 +12,6 @@ body {
 }
 
 /* Styles for header */
-
 .header {
     min-height: 40vh;
     width: 100%;
@@ -25,14 +23,12 @@ body {
 }
 
 /* Styles for sections */
-
 .objects {
     text-align: center;
     margin: 20px 0;
 }
 
 /* Navigation Styling */
-
 nav {
     display: flex;
     padding: 2% 4%;
@@ -80,7 +76,6 @@ nav .fa {
 }
 
 /* Мobile style for navigation */
-
 @media (max-width: 700px) {
     .nav-links ul li {
         display: block;
@@ -119,22 +114,20 @@ nav .fa {
     .text-box h1 {
         font-size: 20px;
     }
+
     .nav-links ul li a {
         color: #fff; 
     }
 }
 
 /*Top left side logo*/
-
 a.top-logo {
     text-decoration: none;
     color: #0b1215;
     font-size: 20px;
-
 }
 
 /* Text on main page*/
-
 .text-box {
     width: 90%;
     color: #212427;
@@ -257,7 +250,6 @@ p {
 }
 
 /*Mobile style for projects*/
-
 @media (prefers-reduced-motion: no-preference) {
     .newprojects figcaption {
         transform: translate3d(0, 2rem, 0);
@@ -286,14 +278,12 @@ p {
 }
 
 /* Gallery */
-
 .gallery img {
     width: 200px;
     cursor: pointer;
 }
 
 /* Modal Window */
-
 .modal {
     display: none;
     position: fixed;
@@ -332,14 +322,16 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
+    position: relative; /* Ensure the image container is relatively positioned */
     width: 50%;
 }
 
 .modal-images img {
-    width: 100%;
-    max-width: 100%;
+    height: 400px; /* Установите желаемую высоту */
+    width: auto;
+    object-fit: cover; /* Обрезка изображения, чтобы оно заполнило контейнер */
     border-radius: 10px;
+    display: block;
 }
 
 .modal-text {
@@ -349,7 +341,6 @@ p {
 }
 
 /*Button style for sliding in modal window */
-
 .prev, .next {
     cursor: pointer;
     position: absolute;
@@ -363,21 +354,20 @@ p {
     transition: 0.6s ease;
     background-color: rgba(0, 0, 0, 0.5);
     border: none;
-    z-index: 10; 
+    z-index: 10;
     display: flex;
     align-items: center;
     justify-content: center;
+    transform: translateY(-50%);
 }
 
 .prev {
-    left: 0; 
-    transform: translateY(-50%);
+    left: 0; /* Place the button at the very edge of the image container */
     border-radius: 0 3px 3px 0;
 }
 
 .next {
-    right: 0; 
-    transform: translateY(-50%);
+    right: 0; /* Place the button at the very edge of the image container */
     border-radius: 3px 0 0 3px;
 }
 
@@ -386,7 +376,6 @@ p {
 }
 
 /*Close button styling*/
-
 .close {
     color: black;
     position: absolute; 
@@ -404,8 +393,9 @@ p {
     cursor: pointer;
 }
 
-/* Mobile styling for modal window*/
 
+
+/* Mobile styling for modal window */
 @media (max-width: 700px) {
     .modal-content {
         flex-direction: column;
@@ -438,8 +428,8 @@ p {
 
     .prev, .next {
         top: 50%;
-        width: 30px;
-        height: 30px;
+        width: 40px;
+        height: 40px;
         font-size: 22px;
         background-color: rgba(0, 0, 0, 0.5);
         border: none;
@@ -485,7 +475,6 @@ p {
 }
 
 /*Table styling for Mobile*/
-
 @media (max-width: 700px) {
     .newprojects ul {
         display: grid;
@@ -500,20 +489,112 @@ p {
     }
 }
 
-/*Footer styling*/
+/*Contacts section styling*/
+.contacts {
+    padding: 20px;
+    margin-bottom: 40px;
+}
 
-.footer {
-    background: #0b1215;
-    color: #fff;
+.contacts h2 {
     text-align: center;
+    margin-bottom: 20px;
+}
+
+.contacts-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto; 
+    position: relative;
+}
+
+.contacts-col {
+    flex: 1;
+    min-width: 200px;
+    max-width: 400px;
+    text-align: left; 
+}
+
+.contacts-col.middle {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.contacts-col.right {
+    margin-right: 0; /* Установите нужное значение для отступа вправо */
+}
+
+.contact-list-item {
+    margin-bottom: 20px;
+    color:#EAEAEA
+}
+
+.contacts-header {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.list-name-descr, .contact-list-link, .contact-list-item a {
+    font-size: 14px;
+    color: #EAEAEA; /*Color for text in footer*/
+}
+
+.contact-list-link a, .contact-list-item a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.contact-list-link a:hover, .contact-list-item a:hover {
+    text-decoration: underline;
+}
+
+/*Contact section styling for mobile devices*/
+@media (max-width: 768px) {
+    .contacts-grid {
+        flex-direction: column;
+        align-items: flex-start; 
+        gap: 30px;
+    }
+
+    .contacts-col {
+        margin-bottom: 5px; 
+    }
+
+    .contacts-col.middle {
+        position: static;
+        transform: none;
+        text-align: left; 
+    }
+
+    .contacts-col.right {
+        margin-right: 0;
+    }
+
+    .contact-list-item {
+        margin-bottom: 10px;
+    }
+
+    .contacts-header {
+        margin-bottom: 5px;
+    }
+}
+
+/*Footer styling*/
+.footer {
+    background: #1F2325;
+    color: #EAEAEA;
+    text-align: center;
+    margin-top: 40px;
 }
 
 .footer-content {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    max-width: 800px; 
-    margin: 0 auto;
+    max-width: 800px;
+    margin: 0 auto; 
     padding: 20px;
 }
 
@@ -538,7 +619,7 @@ p {
 }
 
 .footer-section ul li a {
-    color: #fff;
+    color: #EAEAEA;
     text-decoration: none;
 }
 
@@ -556,15 +637,14 @@ p {
 }
 
 .footer-bottom {
-    background: #222;
-    color: #bbb;
+    background: #0b1215;
+    color: #EAEAEA;
     padding: 10px 0;
     font-size: 14px;
     margin-top: 20px;
 }
 
-/*Footer styling for Mobile*/
-
+/*Footer styling for mobile devices*/
 @media (max-width: 768px) {
     .footer-content {
         flex-direction: column;
@@ -575,4 +655,3 @@ p {
         text-align: center;
     }
 }
-

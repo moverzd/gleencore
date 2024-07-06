@@ -3,7 +3,6 @@ html {
 }
 
 /*To all objects*/
-
 * {
     margin: 0;
     padding: 0;
@@ -16,7 +15,6 @@ body {
 }
 
 /*Top left side logo*/
-
 a.top-logo {
     text-decoration: none;
     color: #fff;
@@ -24,7 +22,6 @@ a.top-logo {
 }
 
 /*Header*/
-
 .header {
     min-height: 100vh;
     width: 100%;
@@ -35,7 +32,6 @@ a.top-logo {
 }
 
 /*Navigation bar*/
-
 nav {
     display: flex;
     padding: 2% 4%;
@@ -81,8 +77,8 @@ nav {
 nav .fa {
     display: none;
 }
-/*Navigation bar properties for mobile devices*/
 
+/*Navigation bar properties for mobile devices*/
 @media (max-width: 700px) {
     .nav-links ul li {
         display: block;
@@ -119,7 +115,6 @@ nav .fa {
 }
 
 /*Text box on main page*/
-
 .text-box {
     width: 90%;
     color: #fff;
@@ -141,7 +136,6 @@ nav .fa {
 }
 
 /*Button in text-box*/
-
 .first-page-button {
     display: inline-block;
     text-decoration: none;
@@ -154,17 +148,14 @@ nav .fa {
     transition: 1s;
     text-align: center;
     border-radius: 10px;
- 
 }
 
 .first-page-button:hover {
     border: 1px solid #3C096C;
     background: #3C096C;
-
 }
 
 /*Properties for headers and paragraphs which are not included in sections*/
-
 h1 {
     font-size: 36px;
     font-weight: 600;
@@ -178,7 +169,6 @@ p {
 }
 
 /*Styles for facts table*/
-
 .row {
     margin-top: 5%;
     display: flex;
@@ -217,7 +207,6 @@ h3 {
 }
 
 /*Styles for facts table for mobile devices*/
-
 @media (max-width: 700px) {
     .row {
         flex-direction: column;
@@ -430,9 +419,7 @@ h3 {
     margin: 0;
 }
 
-
 /*Contacts section styling*/
-
 .contacts {
     padding: 20px;
     margin-bottom: 40px;
@@ -471,6 +458,7 @@ h3 {
 
 .contact-list-item {
     margin-bottom: 20px;
+    color:#EAEAEA
 }
 
 .contacts-header {
@@ -480,7 +468,7 @@ h3 {
 
 .list-name-descr, .contact-list-link, .contact-list-item a {
     font-size: 14px;
-    color: #333;
+    color: #EAEAEA; /*Color for text in footer*/
 }
 
 .contact-list-link a, .contact-list-item a {
@@ -493,7 +481,6 @@ h3 {
 }
 
 /*Contact section styling for mobile devices*/
-
 @media (max-width: 768px) {
     .contacts-grid {
         flex-direction: column;
@@ -525,10 +512,9 @@ h3 {
 }
 
 /*Footer styling*/
-
 .footer {
-    background: #0b1215;
-    color: #fff;
+    background: #1F2325;
+    color: #EAEAEA;
     text-align: center;
 }
 
@@ -562,7 +548,7 @@ h3 {
 }
 
 .footer-section ul li a {
-    color: #fff;
+    color: #EAEAEA;
     text-decoration: none;
 }
 
@@ -580,15 +566,14 @@ h3 {
 }
 
 .footer-bottom {
-    background: #222;
-    color: #bbb;
+    background: #0b1215;
+    color: #EAEAEA;
     padding: 10px 0;
     font-size: 14px;
     margin-top: 20px;
 }
 
 /*Footer styling for mobile devices*/
-
 @media (max-width: 768px) {
     .footer-content {
         flex-direction: column;
@@ -599,4 +584,3 @@ h3 {
         text-align: center;
     }
 }
-

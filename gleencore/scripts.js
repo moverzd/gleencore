@@ -39,7 +39,7 @@ function scrollToPartners() {
     }, 100); 
 }
 
-//Scroll to contacts
+//Scroll to Contacts
 
 function scrollToContacts() {
     hideMenu();
