@@ -2,13 +2,21 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
+    /* font-family: 'Poppins', sans-serif; */
+    font-family: "PT Mono",monospace;
     box-sizing: border-box;
 }
 
 body {
     background-color: #EBEBEB;
     overflow-x: hidden; 
+}
+.pre-line {
+    white-space: pre-line;
+}
+
+.modal-description {
+    white-space: pre-line;
 }
 
 /* Styles for header */
@@ -34,7 +42,6 @@ nav {
     padding: 2% 4%;
     justify-content: space-between;
     align-items: center;
-    /*DO COLORS*/
 }
 
 .nav-links {
@@ -55,7 +62,7 @@ nav {
 .nav-links ul li a {
     color: #0b1215;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 18px;
 }
 
 .nav-links ul li::after {
@@ -125,7 +132,7 @@ nav .fa {
 a.top-logo {
     text-decoration: none;
     color: #0b1215;
-    font-size: 20px;
+    font-size: 32px;
 }
 
 /* Text on main page*/
@@ -278,11 +285,6 @@ p {
     }
 }
 
-/* Gallery */
-.gallery img {
-    width: 200px;
-    cursor: pointer;
-}
 
 /* Modal Window */
 .modal {
@@ -416,7 +418,7 @@ p {
 .close {
     color: black;
     position: absolute; 
-    top: 10px; 
+    top: -5px; 
     right: 10px; 
     font-size: 28px;
     font-weight: bold;
@@ -456,9 +458,11 @@ p {
     }
 
     .modal-text {
-        max-width: 100%;
+        width: 100%; /* Увеличена ширина */
+        max-width: 100%; /* Увеличена ширина */
         padding: 10px 20px 20px 20px;
-        text-align: center;
+        text-align: left; 
+        word-wrap: break-word; /* Чтобы слова не выходили за пределы контейнера */
     }
 
     .prev, .next {
@@ -491,7 +495,7 @@ p {
     }
 
     .close {
-        top: -5px;
+        top: 2px;
         left: 95%; 
         transform: translateX(-50%);
     }
@@ -532,6 +536,7 @@ p {
 .contacts h2 {
     text-align: center;
     margin-bottom: 20px;
+    font-size: 24px;
 }
 
 .contacts-grid {
