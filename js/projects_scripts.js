@@ -97,3 +97,36 @@ document.querySelector(".next").onclick = function() {
     updateModal();
 }
 
+/*Making text formatting */
+document.addEventListener("DOMContentLoaded", function() {
+    const modal = document.getElementById("modal");
+    const modalImg = document.getElementById("modal-img");
+    const modalTitle = document.getElementById("modal-title");
+    const modalDescription = document.getElementById("modal-description");
+    const modalTriggers = document.querySelectorAll(".modal-trigger");
+
+    modalTriggers.forEach(trigger => {
+        trigger.addEventListener("click", function() {
+            const images = JSON.parse(this.getAttribute("data-images"));
+            const title = this.getAttribute("data-title");
+            const description = this.getAttribute("data-description");
+
+            modalImg.src = images[0];
+            modalTitle.textContent = title;
+            modalDescription.textContent = description;
+            modalDescription.style.whiteSpace = "pre-line";
+
+            modal.style.display = "block";
+        });
+    });
+
+    document.querySelector(".close").addEventListener("click", function() {
+        modal.style.display = "none";
+    });
+
+    window.addEventListener("click", function(event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+});

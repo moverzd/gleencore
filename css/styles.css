@@ -6,8 +6,14 @@ html {
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
+    /* font-family: 'Poppins', sans-serif; */
+    font-family: "PT Mono",monospace;
     box-sizing: border-box;
+}
+
+/*Text formating*/
+.pre-line {
+    white-space: pre-line;
 }
 
 body {
@@ -18,7 +24,7 @@ body {
 a.top-logo {
     text-decoration: none;
     color: #fff;
-    font-size: 20px;
+    font-size: 32px;
 }
 
 /*Header*/
@@ -57,7 +63,7 @@ nav {
 .nav-links ul li a {
     color: #fff;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 18px;
 }
 
 .nav-links ul li::after {
@@ -115,7 +121,7 @@ nav .fa {
     }
 
     .text-box h1 {
-        font-size: 20px;
+        font-size: 28px;
     }
 }
 
@@ -134,7 +140,7 @@ nav .fa {
 
 .text-box p {
     margin: 20px 0 40px;
-    font-size: 20px;
+    font-size: 24px;
     color:#fff;
 }
 
@@ -145,7 +151,7 @@ nav .fa {
     color: #fff;
     border: 1px solid #fff;
     padding: 12px 34px;
-    font-size: 13px;
+    font-size: 18px;
     background: transparent;
     cursor: pointer;
     transition: 1s;
@@ -162,6 +168,8 @@ nav .fa {
 h1 {
     font-size: 36px;
     font-weight: 600;
+    text-align: center;
+
 }
 
 p {
@@ -171,241 +179,147 @@ p {
     line-height: 22px;
 }
 
-/*Styles for facts table*/
-.row {
-    margin-top: 5%;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
 
+/* Styles for facts section */
 .facts {
     width: 80%;
     margin: auto;
-    text-align: center;
     padding-top: 70px;
 }
 
-.facts-col {
-    flex-basis: 31%;
-    background: #EBEBEB;
-    border-radius: 10px;
-    margin-bottom: 5%;
-    padding: 20px 12px;
-    transition: 0.5s;
-}
-
-.facts-col:hover {
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
-}
-.facts-numbers{
-    font-size: 48px;
-}
-.facts h3{
-    color:#0b1215;
-}
-h3 {
-    font-weight: 600;
-    margin: 10px 0;
-}
-.facts p{
-    font-size: 16px;
-}
-
-/*Styles for facts table for mobile devices*/
-@media (max-width: 700px) {
-    .row {
-        flex-direction: column;
-    }
-}
-
-/*Styles for projects table*/
-.projectsbox {
+.container {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 50px 0 20px;
 }
 
-.projectsbox h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
+.facts-row.single {
+    margin-bottom: 10px; /* Уменьшить расстояние между первой строкой и следующими */
 }
 
-.projectsbox p {
-    font-size: 16px;
-    color: #777;
-    margin-bottom: 10px;
+.facts-row.single .facts-col {
+    flex-basis: 100%;
 }
 
-.newprojects {
+.facts-row {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding: 0;
-}
-
-.newprojects ul {
-    list-style: none;
-    margin: 0;
-    padding: 0 4rem;
-    display: grid;
-    gap: 0.25rem;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-    max-width: 100%;
-    width: calc(100% - 4rem);
-    border-radius: 10px;
-}
-
-.newprojects li {
-    flex: 1 1 20rem;
-    display: flex;
-    justify-content: center;
-}
-
-.newprojects img {
-    width: 100%;
-    display: block;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    transition: transform 1000ms;
-}
-
-.newprojects figure {
-    margin: 0;
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    width: 100%;
-}
-
-.newprojects figure::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 200%;
-    height: 200%;
-    background: rgba(0, 0, 0, 0.5);
-    transform-origin: center;
-    opacity: 0;
-    transform: scale(2);
-    transition: opacity 100ms;
-}
-
-.newprojects figcaption {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 1rem;
-    color: #fff;
-    font-size: 1.2rem;
-    z-index: 1;
-    opacity: 0;
-    transition: opacity 600ms, transform 600ms;
-}
-
-.newprojects a:is(:hover, :focus) figure::after {
-    opacity: 1;
-}
-
-.newprojects a:is(:hover, :focus) figcaption {
-    opacity: 1;
-}
-
-/*Styles for projects table for mobile devices*/
-@media (prefers-reduced-motion: no-preference) {
-    .newprojects figcaption {
-        transform: translate3d(0, 2rem, 0);
-    }
-
-    .newprojects figure::after {
-        border-radius: 50%;
-        opacity: 1;
-        transform: scale(0);
-        transition: transform 900ms;
-    }
-
-    .newprojects a:is(:hover, :focus) figure::after {
-        transform: scale(2.5);
-    }
-
-    .newprojects a:is(:hover, :focus) figcaption {
-        opacity: 1;
-        transform: translate3d(0, 0, 0);
-        transition: opacity 600ms 400ms, transform 600ms 400ms;
-    }
-
-    .newprojects a:is(:hover, :focus) img {
-        transform: scale(1.2);
-    }
-}
-@media (max-width: 700px) {
-    .newprojects ul {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); /* Две колонки */
-        gap: 0.5rem;
-        padding: 0 1rem; /* Добавляем отступы слева и справа */
-        max-width: 100%;
-    }
-
-    .newprojects li {
-        width: 100%;
-    }
-}
-
-/*Button styling under projectbox*/
-.button-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.projects-button {
-    display: inline-block;
-    text-decoration: none;
-    color: #0b1215;
-    border: 1px solid #777; 
-    padding: 12px 34px;
-    font-size: 13px;
-    background: transparent;
-    cursor: pointer;
-    transition: 1s;
-    text-align: center;
-    border-radius: 10px;
-}
-
-.projects-button:hover {
-    border-color: #3C096C;
-    background: #3C096C;
-    color: #fff;
-}
-
-/*Partners styling*/
-.partners {
-    text-align: center;
-    padding: 50px 0;
-}
-
-.partners h2 {
-    font-size: 36px;
+    justify-content: space-between;
+    flex-wrap: wrap;
     margin-bottom: 30px;
+}
+
+.facts-col {
+    flex-basis: 48%;
+    background: #EBEBEB;
+    padding: 10px 15px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.facts-col h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.facts-col h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.facts-col p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.facts-link {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px; 
+    font-size: 18px;
+    color: #0b1215;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.facts-link:hover {
+    color: #3C096C;
+    text-decoration: underline;
+}
+
+.underline {
+    width: 70px;
+    height: 3px;
+    background-color: black;
+    margin-top: 10px;
+    margin-bottom: 10px; /* Уменьшить отступ снизу */
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .facts-row {
+        flex-direction: column;
+    }
+
+    .facts-col {
+        flex-basis: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+
+/* Styles for partners section similar to facts section */
+/* Styles for partners section similar to facts section */
+.partners {
+    width: 80%;
+    margin: auto;
+    padding-top: 70px;
+    padding-bottom: 70px; /* Добавлен нижний отступ */
+}
+
+.partners .container {
+    display: flex;
+    flex-direction: column;
+}
+
+.partners .facts-row.single .facts-col {
+    flex-basis: 100%;
+}
+
+.partners .facts-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.partners .facts-col {
+    flex-basis: 100%;
+    padding: 20px 15px;
+    text-align: left;
+}
+
+.partners .facts-col h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.partners .underline {
+    width: 50px;
+    height: 3px;
+    background-color: black;
+    margin-top: 10px;
+    margin-bottom: 10px; 
 }
 
 .partner-logos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 20px;
+    gap: 30px;
     justify-items: center;
     align-items: center;
+    margin-top: 10px; /* Уменьшить отступ сверху */
+    margin-bottom: 30px;
 }
 
 .logo-item {
@@ -416,14 +330,33 @@ h3 {
     width: 150px;
     height: 100px;
     object-fit: contain;
-    margin-bottom: 10px;
+    margin-bottom: 5px; 
 }
 
 .logo-item p {
     font-size: 14px;
     color: #555;
-    margin: 0;
+    margin: 5px 0 0 0;
 }
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .partners .facts-row {
+        flex-direction: column;
+    }
+
+    .partners .facts-col {
+        flex-basis: 100%;
+        margin-bottom: 20px;
+    }
+
+    .partner-logos {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 30px; /* Увеличить расстояние между картинками */
+    }
+}
+
+
 
 /*Contacts section styling*/
 .contacts {
@@ -434,6 +367,7 @@ h3 {
 .contacts h2 {
     text-align: center;
     margin-bottom: 20px;
+    font-size: 24px;
 }
 
 .contacts-grid {
