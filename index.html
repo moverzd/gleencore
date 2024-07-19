@@ -2,12 +2,11 @@
 <html lang="ru">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
     <title>СК Глинкор</title>
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,600,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<<<<<<< HEAD
-=======
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap" rel="stylesheet">    
@@ -15,7 +14,6 @@
     <link rel="icon" type="image/png" sizes="32x32" href="images/logos/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/logos/favicon/favicon-16x16.png">
     <link rel="manifest" href="images/logos/favicon/site.webmanifest">
->>>>>>> 50b67a8 (Update #9.Finishing touches. Added favicon, new logos, text-formating, new font. Edited text-box on main page,)
     <script src="js/main.js" defer></script>
 </head>
 <body>
@@ -25,10 +23,10 @@
             <div class="nav-links" id="navLinks">
                 <i class="fa fa-close" onclick="hideMenu()"></i>
                 <ul>
-                    <li><a href="javascript:void(0);" onclick="scrollToFacts()">О нас</a></li>
+                    <li><a href="javascript:void(0);" data-scroll=".facts">О нас</a></li>
                     <li><a href="projects_main.html">Проекты</a></li>
-                    <li><a href="javascript:void(0);" onclick="scrollToPartners()">Клиенты</a></li>
-                    <li><a href="javascript:void(0);" onclick="scrollToContacts()">Контактная информация</a></li>
+                    <li><a href="javascript:void(0);" data-scroll=".partners">Клиенты</a></li>
+                    <li><a href="javascript:void(0);" data-scroll=".contacts">Контактная информация</a></li>
                 </ul>
             </div>
             <i class="fa fa-bars" onclick="showMenu()"></i>
@@ -37,7 +35,7 @@
         <div class="text-box">
             <h1>Строительная компания Глинкор</h1>
             <p>Управление проектами строительства и инжиниринг</p>
-            <a href="javascript:void(0);" class="first-page-button" onclick="scrollToFacts()">О нас</a>
+            <a href="javascript:void(0);" class="first-page-button" data-scroll=".facts">О нас</a>
         </div>
     </section>
 
@@ -47,7 +45,7 @@
         <div class="container">
             <div class="facts-row single">
                 <div class="facts-col">
-                    <h2>О нас</h2>
+                    <h2>O нас</h2>
                     <div class="underline"></div>
                     <a href="projects_main.html" class="facts-link">Посмотреть все проекты</a>
                 </div>
@@ -80,41 +78,10 @@
             </div>
         </div>
     </section>
-    
-    
-    
-
 
     <!---------- Partners ---------->
 
     <section class="partners" id="partners">
-<<<<<<< HEAD
-        <h2>Нам доверяют</h2>
-        <div class="partner-logos">
-            <div class="logo-item">
-                <img src="images/logos/teremok.png" alt="Логотип компании 1">
-                <p>Сеть ресторанов быстрого питания</p>
-            </div>
-            <div class="logo-item">
-                <img src="images/logos/logo_babochka-Photoroom.png" alt="Логотип компании 2">
-                <p>Бутики брендовой одежды</p>
-            </div>
-            <div class="logo-item">
-                <img src="images/logos/hitmash-Photoroom.png" alt="Логотип компании 3">
-                <p>Офис продаж и технического обслуживания</p>
-            </div>
-            <div class="logo-item">
-                <img src="images/logos/italy-group-Photoroom.png" alt="Логотип компании 4">
-                <p>Сеть ресторанов</p>
-            </div>
-            <div class="logo-item">
-                <img src="images/logos/momologo.png" alt="Логотип компании 5">
-                <p>Сеть ресторанов</p>
-            </div>
-            <div class="logo-item">
-                <img src="images/logos/burger-king-logo.png" alt="Логотип компании 6">
-                <p>Сеть ресторанов быстрого питания</p>
-=======
         <div class="container">
             <div class="facts-row single">
                 <div class="facts-col">
@@ -152,27 +119,24 @@
                     <p>Электронное производство</p>
                 </div>
                 <div class="logo-item">
-                    <img src="images/logos/ozonlogo.png" alt="Company Logo 7">
+                    <img src="images/logos/ozonlogo.png" alt="Company Logo 8">
                     <p>Склады для маркетплейса</p>
                 </div>
                 <div class="logo-item">
-                    <img src="images/logos/dodo_logo.png" alt="Company Logo 7">
+                    <img src="images/logos/dodo_logo.png" alt="Company Logo 9">
                     <p>Производство</p>
                 </div>
                 <div class="logo-item">
-                    <img src="images/logos/euro-autoPhotoroom.png" alt="Company Logo 7">
+                    <img src="images/logos/euro-autoPhotoroom.png" alt="Company Logo 10">
                     <p>Сервсиные центры</p>
                 </div>
                 <div class="logo-item">
-                    <img src="images/logos/logo_bestyzhevskiy.png" alt="Company Logo 7">
+                    <img src="images/logos/logo_bestyzhevskiy.png" alt="Company Logo 11">
                     <p>Бизнес-центр</p>
                 </div>
->>>>>>> 50b67a8 (Update #9.Finishing touches. Added favicon, new logos, text-formating, new font. Edited text-box on main page,)
             </div>
         </div>
     </section>
-    
-    
 
     <!-------- footer ---------->
     <footer class="footer">
