@@ -267,7 +267,7 @@ p {
 }
 
 
-/* Styles for partners section similar to facts section */
+
 /* Styles for partners section similar to facts section */
 .partners {
     width: 80%;
@@ -330,7 +330,8 @@ p {
     width: 150px;
     height: 100px;
     object-fit: contain;
-    margin-bottom: 5px; 
+    margin-bottom: 5px;
+    filter: grayscale(100%); 
 }
 
 .logo-item p {

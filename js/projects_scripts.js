@@ -1,6 +1,6 @@
-// Toggle menu
-var navLinks = document.getElementById("navLinks");
+// Toggle menu 
 
+var navLinks = document.getElementById("navLinks");
 function showMenu() {
     navLinks.style.right = "0";
 }
@@ -8,7 +8,6 @@ function showMenu() {
 function hideMenu() {
     navLinks.style.right = "-100%";
 }
-
 // Get modal window
 var modal = document.getElementById("modal");
 
@@ -72,19 +71,18 @@ triggers.forEach(function(trigger) {
         createDots();
         updateModal();
         modal.style.display = "block";
-        modal.classList.add('show-modal'); // Add class for animation
     };
 });
 
 // When user presses (x), modal window closes
 span.onclick = function() {
-    hideModal();
+    modal.style.display = "none";
 }
 
 // When user presses on any place out of modal window, it closes
 window.onclick = function(event) {
     if (event.target == modal) {
-        hideModal();
+        modal.style.display = "none";
     }
 }
 
@@ -99,15 +97,12 @@ document.querySelector(".next").onclick = function() {
     updateModal();
 }
 
-// Function to hide modal with transition
-function hideModal() {
-    modal.classList.remove('show-modal');
-    setTimeout(function() {
-        modal.style.display = "none";
-    }, 300); // Delay to match CSS transition
-}
-
+/*Making text formatting */
 document.addEventListener("DOMContentLoaded", function() {
+    const modal = document.getElementById("modal");
+    const modalImg = document.getElementById("modal-img");
+    const modalTitle = document.getElementById("modal-title");
+    const modalDescription = document.getElementById("modal-description");
     const modalTriggers = document.querySelectorAll(".modal-trigger");
 
     modalTriggers.forEach(trigger => {
@@ -122,17 +117,16 @@ document.addEventListener("DOMContentLoaded", function() {
             modalDescription.style.whiteSpace = "pre-line";
 
             modal.style.display = "block";
-            modal.classList.add('show-modal'); // Add class for animation
         });
     });
 
     document.querySelector(".close").addEventListener("click", function() {
-        hideModal();
+        modal.style.display = "none";
     });
 
     window.addEventListener("click", function(event) {
         if (event.target === modal) {
-            hideModal();
+            modal.style.display = "none";
         }
     });
 });
