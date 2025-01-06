@@ -64,7 +64,7 @@ nav {
 .nav-links ul li a {
     color: #fff;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 26px;
 }
 
 .nav-links ul li::after {
@@ -103,15 +103,25 @@ nav .fa {
         width: 100%;
         top: 0;
         right: -100%;
-        text-align: left;
         z-index: 2;
         transition: 0.5s;
-        opacity: 0.9;
+        opacity: 0.97;
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: left;
     }
 
     .nav-links ul {
         padding: 30px;
+        list-style: none;
+        margin-bottom: 30px;
+        flex-direction: column;
+        justify-content: center;
+        text-align: left;
     }
+   
 
     nav .fa {
         display: block;
@@ -124,6 +134,42 @@ nav .fa {
     .text-box h1 {
         font-size: 28px;
     }
+    .nav-links .fa-close {
+        position: absolute; /* Абсолютное позиционирование */
+        top: 20px; /* Отступ сверху */
+        right: 20px; /* Отступ справа */
+        color: #fff;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 3; /* Поверх остального контента */
+    }
+
+    /* Контакты под меню */
+    .nav-contacts {
+        margin-top: 40px; /* Отступ от меню */
+        text-align: center;
+    }
+
+    .nav-contacts p {
+        margin: 5px 0;
+        font-size: 16px;
+        color: #fff;
+    }
+
+    .nav-contacts a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px !important;
+    }
+
+    .nav-contacts a:hover {
+        text-decoration: underline;
+    }
+    .nav-links li a{
+        font-size: 20px;
+    }
+
+    
 }
 
 /*Text box on main page*/
