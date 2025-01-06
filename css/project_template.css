@@ -1,0 +1,484 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "PT Mono", monospace;
+    background-color: #EBEBEB;
+    overflow-x: hidden; /* Убирает горизонтальный скролл */
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+.header {
+    min-height: 10vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background-color: #EBEBEB;
+  }
+
+  nav {
+    display: flex;
+    padding: 2% 4%;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav-links {
+    flex: 1;
+    text-align: right;
+  }
+  .nav-links ul {
+    list-style: none;
+  }
+  .nav-links ul li {
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+  }
+  .nav-links ul li a {
+    color: #0b1215;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  .nav-links ul li::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    background: #490B84;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+  }
+  .nav-links ul li:hover::after {
+    width: 100%;
+  }
+  nav .fa {
+    display: none;
+  }
+
+  /* Мobile style for navigation */
+  @media (max-width: 700px) {
+    .nav-links ul li {
+      display: block;
+      background-color: #490B84;
+    }
+    .nav-links {
+      position: fixed;
+      background: #490B84;
+      height: 100vh;
+      width: 100%;
+      top: 0;
+      right: -100%;
+      text-align: left;
+      z-index: 1000;
+      transition: 0.5s;
+      opacity: 0.9;
+    }
+    .nav-links ul {
+      padding: 30px;
+      background-color: #490B84;
+    }
+    nav .fa {
+      display: block;
+      color: #fff;
+      margin: 10px;
+      font-size: 22px;
+      cursor: pointer;
+      color: #0b1215;
+    }
+    .nav-links .fa-close {
+      color: #fff;
+      background-color: #490B84;
+    }
+    .text-box h1 {
+      font-size: 20px;
+      background-color: #490B84;
+    }
+    .nav-links ul li a {
+      color: #fff; 
+      background-color: #490B84;
+    }
+  }
+  /* Top left side logo */
+  a.top-logo {
+    text-decoration: none;
+    color: #0b1215;
+    font-size: 32px;
+    padding: 10px;
+  }
+
+/* Hero Image */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto;
+    max-width: 100%;
+    overflow: hidden;
+    background-color: #EBEBEB;
+}
+
+.hero img {
+    width: 75%;
+    height: 70vh;
+    object-fit: cover;
+    display: block;
+    border: none;
+}
+
+/* Мобильные устройства (соотношение 4:3) */
+@media (max-width: 768px) {
+    .hero {
+        width: 100%;
+        padding: 18px;
+    }
+
+    .hero img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 3; /* Соотношение сторон 4:3 */
+        object-fit: cover; /* Обрезка изображения по контейнеру */
+    }
+}
+/* Project Info */
+.project-info {
+    max-width: 1200px;
+    margin: 60px auto;
+    text-align: left;
+    padding: 0 40px;
+}
+
+.project-info h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #3C096C;
+    margin-bottom: 10px;
+}
+
+.project-info h2 {
+    font-size: 20px;
+    color: #3C096C;
+    margin-bottom: 20px;
+}
+
+.project-info p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #4A4A4A;
+    margin-bottom: 40px;
+}
+
+/* Project Details */
+.project-details {
+    max-width: 1200px;
+    margin: 0 auto 60px auto;
+    text-align: left;
+    padding: 0 40px;
+}
+
+.project-details p {
+    font-size: 14px;
+    color: #4A4A4A;
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+.project-details p b {
+    font-weight: bold;
+    color: #3C096C;
+}
+
+/* 📱 Адаптивная версия для мобильных устройств */
+@media (max-width: 768px) {
+    /* Выровнять заголовок и текст по верхней фотографии */
+    .project-info {
+        display: flex;
+        flex-direction: column;
+        align-items: left; /* Центрируем текст */
+        padding: 0 18px; /* Уменьшаем отступы */
+        margin-top: -30px; /* Выравниваем блок с заголовком ближе к фотографии */
+        margin-bottom: 10px;
+    }
+
+    .project-info h1,
+    .project-info h2 {
+        margin: 10px 0;
+    }
+
+    .project-info p {
+        font-size: 16px;
+        line-height: 1.8;
+        margin: 20px 0;
+    }
+
+    /* Увеличить расстояние между фотографиями в галерее */
+    .gallery-row.square-images,
+    .gallery-row.wide-image {
+        margin-bottom: 60px; /* Увеличиваем расстояние между фотографиями */
+    }
+
+    /* Стили для изображений */
+    .gallery-item img {
+        object-fit: cover;
+        margin-bottom: 20px; /* Промежуток между изображениями */
+    }
+    .project-details{
+        padding: 0 18px;
+    }
+}
+
+
+/* Галерея */
+.gallery {
+    margin: 50px auto;
+    max-width: 1200px; /* Ограничиваем ширину галереи */
+    padding: 0 20px;
+}
+
+/* Ряд квадратных (теперь вертикальных) картинок */
+.gallery-row.square-images {
+    display: flex;
+    gap: 20px; /* Отступы между изображениями */
+    margin-bottom: 40px;
+}
+
+.gallery-row.square-images .gallery-item {
+    flex: 1;
+    max-width: calc(50% - 10px); /* Делим ширину на два изображения */
+    height: 600px; /* Делаем изображения вертикальными */
+}
+
+/* Ряд с одной удлинённой картинкой */
+.gallery-row.wide-image {
+    margin-bottom: 40px;
+}
+
+.gallery-row.wide-image .gallery-item {
+    width: 100%;
+    height: 800px; /* Увеличенная высота для одиночного изображения */
+}
+
+/* Общие стили для изображений галереи */
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Заполнение контейнера без искажений */
+    display: block;
+    border-radius: 0; /* Убираем закругления */
+}
+
+/* 📱 Адаптивная версия для мобильных устройств */
+@media (max-width: 768px) {
+    .gallery {
+        padding: 0 18px; /* Уменьшаем отступы по бокам */
+    }
+
+    .gallery-row.square-images {
+        flex-direction: column; /* Переводим изображения в один столбец */
+        gap: 20px; /* Отступы между изображениями */
+    }
+
+    .gallery-row.square-images .gallery-item {
+        max-width: 100%; /* Каждое изображение на всю ширину экрана */
+        height: 400px; /* Унифицированная высота для мобильных */
+    }
+
+    .gallery-row.wide-image .gallery-item {
+        max-width: 100%; /* Широкая картинка тоже адаптируется */
+        height: 400px; /* Снижаем высоту для мобильных */
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Сохраняем пропорции изображений */
+    }
+}
+
+
+
+
+/*Contacts section styling*/
+.contacts {
+    padding: 20px;
+    margin-bottom: 40px;
+}
+
+.contacts h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.contacts-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto; 
+    position: relative;
+}
+
+.contacts-col {
+    flex: 1;
+    min-width: 200px;
+    max-width: 400px;
+    text-align: left; 
+}
+
+.contacts-col.middle {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.contacts-col.right {
+    margin-right: 0;
+}
+
+.contact-list-item {
+    margin-bottom: 20px;
+    color:#EAEAEA
+}
+
+.contacts-header {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.list-name-descr, .contact-list-link, .contact-list-item a {
+    font-size: 16px;
+    color: #EAEAEA;
+}
+
+.contact-list-link a, .contact-list-item a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.contact-list-link a:hover, .contact-list-item a:hover {
+    text-decoration: underline;
+}
+
+/*Contact section styling for mobile devices*/
+@media (max-width: 768px) {
+    .contacts-grid {
+        flex-direction: column;
+        align-items: flex-start; 
+        gap: 30px;
+    }
+
+    .contacts-col {
+        margin-bottom: 5px; 
+    }
+
+    .contacts-col.middle {
+        position: static;
+        transform: none;
+        text-align: left; 
+    }
+
+    .contacts-col.right {
+        margin-right: 0;
+        font-size: 16px;
+    }
+
+    .contact-list-item {
+        margin-bottom: 10px;
+    }
+
+    .contacts-header {
+        margin-bottom: 5px;
+    }
+    .list-name-descr{
+        font-size: 16px;
+    }
+    .contact-list-item a{
+        font-size:16px;
+    }
+    .contact-list-item p{
+        font-size:16px;
+    }
+
+}
+
+/*Footer styling*/
+.footer {
+    background: #1F2325;
+    color: #EAEAEA;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: 0 auto; 
+    padding: 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+}
+
+.footer-section h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #EAEAEA;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-section.contact ul li {
+    display: flex;
+    align-items: center;
+}
+
+.footer-section.contact ul li i {
+    margin-right: 10px;
+}
+
+.footer-bottom {
+    background: #0b1215;
+    color: #EAEAEA;
+    padding: 10px 0;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+/*Footer styling for mobile devices*/
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        text-align: center;
+    }
+}

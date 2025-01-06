@@ -25,6 +25,7 @@ a.top-logo {
     text-decoration: none;
     color: #fff;
     font-size: 32px;
+    padding: 10px;
 }
 
 /*Header*/
@@ -236,7 +237,7 @@ p {
     margin-top: 10px;
     margin-bottom: 10px; 
     font-size: 18px;
-    color: #0b1215;
+    color: #3C096C;
     text-decoration: none;
     font-weight: 600;
 }
@@ -408,7 +409,7 @@ p {
 }
 
 .list-name-descr, .contact-list-link, .contact-list-item a {
-    font-size: 14px;
+    font-size: 16px;
     color: #EAEAEA;
 }
 
@@ -441,6 +442,7 @@ p {
 
     .contacts-col.right {
         margin-right: 0;
+        font-size: 16px;
     }
 
     .contact-list-item {
@@ -450,6 +452,16 @@ p {
     .contacts-header {
         margin-bottom: 5px;
     }
+    .list-name-descr{
+        font-size: 16px;
+    }
+    .contact-list-item a{
+        font-size:16px;
+    }
+    .contact-list-item p{
+        font-size:16px;
+    }
+
 }
 
 /*Footer styling*/
@@ -510,7 +522,7 @@ p {
     background: #0b1215;
     color: #EAEAEA;
     padding: 10px 0;
-    font-size: 14px;
+    font-size: 16px;
     margin-top: 20px;
 }
 
